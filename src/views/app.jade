@@ -7,6 +7,11 @@ block body
       img#logo(src="https://placekitten.com/g/32/32", alt="logo")
     .navlink
       a(href="/logout") Log out
+  section#makeDomo
+    form#domoForm(class="domoForm", name="domoForm", action="/maker", method="POST")
+      label(for="name") Topic: 
+      input#domoName(type="text", name="name", placeholder="Domo Name")
+      a#makeDomoSubmit(class="makeDomoSubmit", href="#") Make Domo
   section#domos
     if !users || users.length == 0
         div.domo
