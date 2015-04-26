@@ -4,7 +4,7 @@ block append style
 block body
   nav
     a(href="/login")
-      img#logo(src="/assets/img/face.png", alt="face logo")
+      img#logo(src="https://placekitten.com/g/32/32", alt="logo")
     .navlink
       a(href="/logout") Log out
   section#makeDomo
@@ -15,15 +15,14 @@ block body
       input#domoAge(type="text", name="age", placeholder="Domo Age")
       a#makeDomoSubmit(class="makeDomoSubmit", href="#") Make Domo
   section#domos
-    if !domos || domos.length == 0
+    if !users || users.length == 0
         div.domo
-            h3.emptyDomo No Domos yet
+            h3.emptyDomo No users yet
     else
-        each val in domos
+        each val in users
             div.domo
-                img(class="domoFace", src="/assets/img/domoface.jpeg", alt="domo face")
+                img(class="domoFace", src="https://placekitten.com/g/32/32", alt="domo face")
                 h3.domoName Name: #{val.name}
-                h3.domoAge Age: #{val.age}
   #domoMessage
     img#speech(src="/assets/img/speech.png", alt="speech box")
     h3
