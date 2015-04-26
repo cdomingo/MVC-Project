@@ -30,8 +30,6 @@ var login = function(req, res) {
         }
         
         req.session.account = account.toAPI();
-        
-        res.json({redirect: '/maker'});
     });
 
 };
@@ -63,8 +61,8 @@ var signup = function(req, res) {
 			}
 
             req.session.account = newAccount.toAPI();
-            
-			res.json({redirect: '/maker'});
+
+            res.render('app', {users: username});
 		});
 	});
 };
