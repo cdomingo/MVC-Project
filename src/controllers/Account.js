@@ -61,8 +61,8 @@ var signup = function(req, res) {
 			}
 
             req.session.account = newAccount.toAPI();
-
-            res.render('app', {users: username});
+            
+			res.json({redirect: '/maker'});
 		});
 	});
 };
