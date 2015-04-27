@@ -7,11 +7,6 @@ block body
       img#logo(src="https://placekitten.com/g/32/32", alt="logo")
     .navlink
       a(href="/logout") Log out
-  section#makeDomo
-    form#domoForm(class="domoForm", name="domoForm", action="/maker", method="POST")
-      label(for="name") Topic: 
-      input#domoName(type="text", name="name", placeholder="Domo Name")
-      a#makeDomoSubmit(class="makeDomoSubmit", href="#") Make Domo
   section#domos
     if !users || users.length == 0
         div.domo
@@ -21,10 +16,5 @@ block body
             div.domo
                 img(class="domoFace", src="https://placekitten.com/g/32/32", alt="domo face")
                 h3.domoName Name: #{val.username}
-  #domoMessage
-    img#speech(src="/assets/img/speech.png", alt="speech box")
-    h3
-      span#errorMessage
-    img#domo(src="assets/img/domo.png", alt="domo")
 block scripts
         script(src="/assets/maker.js")

@@ -15,7 +15,6 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
-                $("#domoMessage").animate({width:'hide'},350);
 
                 window.location = result.redirect;
             },
@@ -26,20 +25,5 @@ $(document).ready(function() {
             }
         });        
     }
-    
-    $("#makeDomoSubmit").on("click", function(e) {
-        e.preventDefault();
-    
-        $("#domoMessage").animate({width:'hide'},350);
-    
-        if($("#domoName").val() == '' || $("#domoAge").val() == '') {
-            handleError("RAWR! All fields are required");
-            return false;
-        }
-
-        sendAjax($("#domoForm").attr("action"), $("#domoForm").serialize());
-        
-        return false;
-    });
     
 });
