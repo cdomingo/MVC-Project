@@ -11,8 +11,6 @@ block body
     form#RoomForm(class="RoomForm", name="RoomForm", action="/maker", method="POST")
       label(for="name") Name: 
       input#RoomName(type="text", name="name", placeholder="Room Name")
-      label(for="age") Age: 
-      input#RoomAge(type="text", name="age", placeholder="Room Age")
       a#makeRoomSubmit(class="makeRoomSubmit", href="#") Make Room
   section#Rooms
     if !Rooms || Rooms.length == 0
@@ -23,7 +21,6 @@ block body
             div.Room
                 img(class="RoomFace", src="https://placekitten.com/g/64/64", alt="Room face")
                 h3.RoomName Name: #{val.name}
-                h3.RoomAge Age: #{val.age}
   #RoomMessage
     img#speech(src="/assets/img/speech.png", alt="speech box")
     h3
