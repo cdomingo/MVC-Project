@@ -27,7 +27,7 @@ nav:nth-child(1) {
 .navlink {
     padding: 5px;
     padding-top: 12px;
-    padding-right: 20px;
+    padding-right: 40px;
     color: white;
     font-size: 1.3em;
     float: right;
@@ -48,7 +48,7 @@ nav:nth-child(1) {
 }
 
 .RoomForm {
-    border: 2px solid #338acc;
+    border: 2px solid #ffad59;
     height: 35px;
     width: 700px;
     margin-top:0px;
@@ -220,7 +220,7 @@ nav:nth-child(1) {
     transition: border-color 0.2s ease-out;
     border-color: rgba(255,255,255, 0.8);
     transition: background-color 2.6s ease-out;
-    background-color: #66bfff;
+    background-color: #ffad59;
 }
 
 img.RoomFace {
