@@ -4,7 +4,7 @@ block append style
 block body
   nav
     a(href="/login")
-      img#logo(src="https://placekitten.com/g/32/32", alt="logo")
+      img#logo(src="https://placekitten.com/g/32/32", alt="face logo")
     .navlink
       a(href="/login") Login
     .navlink
@@ -16,8 +16,10 @@ block body
       label(for="pass") Password: 
       input#pass(type="password", name="pass", placeholder="password")
       a#loginSubmit(class="formSubmit", href="#") Sign in
-  #errorMessage
+  #RoomMessage
+    img#speech(src="/assets/img/speech.png", alt="speech box")
     h3
       span#errorMessage Wrong username or password
+    img#Room(src="https://placekitten.com/g/128/256", alt="Room")
 block scripts
     script(src="/assets/client.js")

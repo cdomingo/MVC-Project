@@ -4,6 +4,7 @@ $(document).ready(function() {
 
     function handleError(message) {
         $("#errorMessage").text(message);
+        $("#RoomMessage").animate({width:'toggle'},350);
     }
     
     function sendAjax(action, data) {
@@ -14,6 +15,7 @@ $(document).ready(function() {
             data: data,
             dataType: "json",
             success: function(result, status, xhr) {
+                $("#RoomMessage").animate({width:'hide'},350);
 
                 window.location = result.redirect;
             },
@@ -24,5 +26,20 @@ $(document).ready(function() {
             }
         });        
     }
+    
+    $("#makeRoomSubmit").on("click", function(e) {
+        e.preventDefault();
+    
+        $("#RoomMessage").animate({width:'hide'},350);
+    
+        if($("#RoomName").val() == '' || $("#RoomAge").val() == '') {
+            handleError("RAWR! All fields are required");
+            return false;
+        }
+
+        sendAjax($("#RoomForm").attr("action"), $("#RoomForm").serialize());
+        
+        return false;
+    });
     
 });

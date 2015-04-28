@@ -4,17 +4,30 @@ block append style
 block body
   nav
     a(href="/login")
-      img#logo(src="https://placekitten.com/g/32/32", alt="logo")
+      img#logo(src="https://placekitten.com/g/32/32", alt="face logo")
     .navlink
       a(href="/logout") Log out
-  section#domos
-    if !users || users.length == 0
-        div.domo
-            h3.emptyDomo No users yet
+  section#makeRoom
+    form#RoomForm(class="RoomForm", name="RoomForm", action="/maker", method="POST")
+      label(for="name") Name: 
+      input#RoomName(type="text", name="name", placeholder="Room Name")
+      label(for="age") Age: 
+      input#RoomAge(type="text", name="age", placeholder="Room Age")
+      a#makeRoomSubmit(class="makeRoomSubmit", href="#") Make Room
+  section#Rooms
+    if !Rooms || Rooms.length == 0
+        div.Room
+            h3.emptyRoom No Rooms yet
     else
-        each val in users
-            div.domo
-                img(class="domoFace", src="https://placekitten.com/g/32/32", alt="domo face")
-                h3.domoName Name: #{val.username}
+        each val in Rooms
+            div.Room
+                img(class="RoomFace", src="https://placekitten.com/g/64/64", alt="Room face")
+                h3.RoomName Name: #{val.name}
+                h3.RoomAge Age: #{val.age}
+  #RoomMessage
+    img#speech(src="/assets/img/speech.png", alt="speech box")
+    h3
+      span#errorMessage
+    img#Room(src="https://placekitten.com/g/128/256", alt="Room")
 block scripts
         script(src="/assets/maker.js")
