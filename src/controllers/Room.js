@@ -18,13 +18,12 @@ var makerPage = function(req, res) {
 
 var makeRoom = function(req, res) {
 
-    if(!req.body.name || !req.body.age) {
+    if(!req.body.name) {
         return res.status(400).json({error: "Room name is required"});
     }
     
     var RoomData = {
         name: req.body.name,
-        age: req.body.age,
         owner: req.session.account._id
     };
     
