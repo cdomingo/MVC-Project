@@ -69,6 +69,44 @@ var signup = function(req, res) {
 	});
 };
 
+var makerPage = function(req, res) {
+
+    Account.AccountModel.findByUsername(req.session.account.username, function(err, docs) {
+
+        if(err) {
+            console.log(err);
+            return res.status(400).json({error:'An error occurred'}); 
+        }
+        
+        res.render('app', {users: docs});
+    });
+};
+
+var makeUser = function(req, res) {
+
+    if(!req.body.name || !req.body.age) {
+        return res.status(400).json({error: "Both name and age are required"});
+    }
+    
+    var userData = {
+        username: req.body.username
+    };
+    
+    var newUser = new Account.AccountModel(userData);
+    
+    newUser.save(function(err) {
+        if(err) {
+            console.log(err);
+            return res.status(400).json({error:'An error occurred'}); 
+        }
+
+        res.json({redirect: '/maker'});
+    });
+    
+};
+
+module.exports.makerPage = makerPage;
+module.exports.make = makeUser;
 module.exports.loginPage = loginPage;
 module.exports.login = login;
 module.exports.logout = logout;

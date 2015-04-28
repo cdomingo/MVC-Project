@@ -10,6 +10,8 @@ var router = function(app) {
     app.post("/signup", mid.requiresSecure, mid.requiresLogout, controllers.Account.signup);
     app.get("/logout", mid.requiresLogin, controllers.Account.logout);
     app.get("/", mid.requiresSecure, controllers.Account.loginPage);
+    app.get("/maker", mid.requiresLogin, controllers.Account.makerPage);
+    app.post("/maker", mid.requiresLogin,  controllers.Account.make);
 };
 
 module.exports = router; 
