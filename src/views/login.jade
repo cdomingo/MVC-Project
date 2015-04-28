@@ -5,10 +5,6 @@ block body
   nav
     a(href="/login")
       img#logo(src="https://placekitten.com/g/32/32", alt="face logo")
-    .navlink
-      a(href="/login") Login
-    .navlink
-      a(href="/signup") Sign up
   section#login
     form#loginForm(class="mainForm", name="loginForm", action="/login", method="POST")
       label(for="username") Username: 
@@ -16,6 +12,7 @@ block body
       label(for="pass") Password: 
       input#pass(type="password", name="pass", placeholder="password")
       a#loginSubmit(class="formSubmit", href="#") Sign in
+  a(class="formSubmit", href="/signup") Sign Up
   #RoomMessage
     h3
       span#errorMessage Wrong username or password
