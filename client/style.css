@@ -96,9 +96,8 @@ nav:nth-child(1) {
     background-color: #ff962a;
 }
 
-
 .mainForm {
-    height: 150px;
+    height: 105px;
     width: 350px;
     margin: 0 auto;
     padding-top: 350px;
@@ -119,11 +118,10 @@ nav:nth-child(1) {
 
 .formSubmit {
     transition: background-color 0.4s ease;
-    display: inline-block;
+    display: block;
     text-align: center;
     margin: 0 auto;
     margin-top: 14px;
-    margin-left: 145px;
     font-size: 1.2em;
     width: 90px;
     background-color: #ff8100;
@@ -140,6 +138,12 @@ nav:nth-child(1) {
 .formSubmit:hover {
     transition: background-color 0.4s ease;
     background-color: #ff962a;
+}
+
+#signup {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #user, #pass, #pass2 {
